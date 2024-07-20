@@ -1,0 +1,70 @@
+:root {
+    --vh: 100vh;
+
+    --color-black100: #121a1a;
+    --color-black200: #0d1515;
+
+    --color-white: #FFFFFF;
+    --color-dark: #34495e;
+    --color-aqua: #006266;
+    --color-livid-blue: #1e3799;
+    --color-deep-blue: #1B1464;
+    --color-black: #1e272e;
+    
+    --color-yellow: #ffe68d;
+
+    /* CSS HEX */
+    --white: #FEFEFEff;
+    --mint-cream: #E4ECE3ff;
+    --dark-spring-green: #0C7B3Dff;
+    --light-spring-green: #17994f;
+    --citrine: #D2D129ff;
+    --shamrock-green: #5D9E71ff;
+    --dartmouth-green: #026235ff;
+    --viridian: #358361ff;
+    --olive: #9C8700ff;
+    --black: #000000ff;
+    --black-2: #000000ff;
+    --cambridge-blue: #71A489ff;
+    --olive-2: #9C8400ff;
+    --ecru: #C1B96Eff;
+
+    --btn-background-color: var(--dark-spring-green);
+    --btn-background-color-hover: var(--light-spring-green);
+    --btn-text-color: var(--white);
+    --btn-border-radius: 32px;
+    --btn-padding: 10px 30px;
+    --btn-font-family: Arial, Helvetica, sans-serif;
+    --btn-font-weight: 200;
+    --btn-transition: 0.25s all ease;
+    --btn-font-size: 1.10rem;
+    --btn-transition: background 0.25s ease;
+}
+
+.btn-default-filled {
+    display: block;
+    cursor: pointer;
+    background-color: var(--btn-background-color);
+    color: var(--btn-text-color);
+    padding: var(--btn-padding);
+    border-radius: var(--btn-border-radius);
+    font-size: var(--btn-font-size);
+    transition: var(--btn-transition);
+}
+
+.btn-default-filled:hover {
+    background-color: var(--btn-background-color-hover);
+}
+
+[data-bs-theme="light"] {
+    --color-primary: var(--color-white);
+    --color-secondary: var(--color-dark);
+    --color-tertiary: var(--color-black);
+}
+
+[data-bs-theme="dark"] {
+    --color-primary: var(--color-dark);
+    --color-secondary: var(--color-white);
+    --color-tertiary: var(--color-white);
+}
+
