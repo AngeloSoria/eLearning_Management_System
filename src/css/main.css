@@ -1,5 +1,5 @@
 /* Fonts */
-@import url("./fonts/roboto.css");
+@import url(fonts.css);
 @import url(root.css);
 
 * {
@@ -20,8 +20,6 @@ body {
 .vhPage {
     min-height: 100vh;
 }
-
-
 
 .textHeader1 {
     font-size: 1.25rem;
@@ -46,11 +44,12 @@ body {
     color: var(--color-white);
     transition: var(--btn-transition);
 }
+
 .btn-primary-outline:hover {
     outline: 0.75px solid var(--color-deep-blue);
 }
 
-.btn-primary {
+/* .btn-primary {
     box-sizing: border-box;
     background-image: linear-gradient(var(--color-deep-blue), var(--color-livid-blue));
     padding: var(--btn-padding);
@@ -61,8 +60,24 @@ body {
     color: var(--color-white);
     transition: var(--btn-transition);
 }
+
 .btn-primary:hover {
     outline: 0.75px solid var(--color-aqua);
+} */
+
+.btn-primary {
+    display: block;
+    cursor: pointer;
+    background-color: var(--btn-background-color);
+    color: var(--btn-text-color);
+    padding: var(--btn-padding);
+    /* border-radius: var(--btn-border-radius); */
+    font-size: var(--btn-font-size);
+    transition: var(--btn-transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-background-color-hover);
 }
 
 /* Modals */

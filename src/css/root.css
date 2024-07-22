@@ -23,37 +23,20 @@
     --dartmouth-green: #026235ff;
     --viridian: #358361ff;
     --olive: #9C8700ff;
-    --black: #000000ff;
-    --black-2: #000000ff;
+    --olive-2: #ad9405;
     --cambridge-blue: #71A489ff;
-    --olive-2: #9C8400ff;
     --ecru: #C1B96Eff;
 
-    --btn-background-color: var(--dark-spring-green);
-    --btn-background-color-hover: var(--light-spring-green);
+    --btn-background-color: var(--olive);
+    --btn-background-color-hover: var(--olive-2);
     --btn-text-color: var(--white);
     --btn-border-radius: 32px;
     --btn-padding: 10px 30px;
-    --btn-font-family: Arial, Helvetica, sans-serif;
+    --btn-font-family: "Montserrat", Arial, Helvetica, sans-serif;
     --btn-font-weight: 200;
     --btn-transition: 0.25s all ease;
     --btn-font-size: 1.10rem;
     --btn-transition: background 0.25s ease;
-}
-
-.btn-default-filled {
-    display: block;
-    cursor: pointer;
-    background-color: var(--btn-background-color);
-    color: var(--btn-text-color);
-    padding: var(--btn-padding);
-    border-radius: var(--btn-border-radius);
-    font-size: var(--btn-font-size);
-    transition: var(--btn-transition);
-}
-
-.btn-default-filled:hover {
-    background-color: var(--btn-background-color-hover);
 }
 
 [data-bs-theme="light"] {
