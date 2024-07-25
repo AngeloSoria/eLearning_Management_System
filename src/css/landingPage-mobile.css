@@ -1,4 +1,40 @@
 
-@media screen and (max-widht: 980px) {
-    
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+
+        position: sticky;
+        top: 0;
+
+        height: 70px;
+        overflow: hidden;
+    }
+    .nav-expanded {
+        transition: 0.25s ease;
+        height: 300px;
+    }
+
+    nav .logo {
+        width: 120px;
+        margin: 12px 0;
+    }
+
+    nav .nav-content {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 90%;
+    }
+    nav .nav-content ul {
+        flex-direction: column;
+    }
+
+    nav .nav-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

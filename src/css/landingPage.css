@@ -1,7 +1,6 @@
 @import url(main.css);
 
 body {
-    /* background-color: var(--color-black200); */
     background-color: white;
 }
 
@@ -39,7 +38,6 @@ nav .nav-content {
     /* outline: 1px solid rgb(0, 255, 55); */
     width: 80%;
     max-width: 1100px;
-    /* gap: 600px; */
 }
 
 nav .logo {
@@ -83,9 +81,6 @@ nav .nav-mobile {
     transform: translate(-80%, 10px);
 
     display: none;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 nav .nav-mobile .btn-menu {
@@ -108,7 +103,6 @@ nav .nav-mobile .btn-menu > .bar {
 }
 
 /* FOOTER */
-
 footer {
     background-color: var(--viridian);
     display: flex;
@@ -140,43 +134,3 @@ footer .socials .item {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-/* RESPONSIVE */
-
-@media screen and (max-width: 768px) {
-    nav {
-        display: flex;
-        justify-content: center;
-        align-items: start;
-
-        position: sticky;
-        top: 0;
-
-        height: 70px;
-        overflow: hidden;
-    }
-    .nav-expanded {
-        transition: 0.25s ease;
-        height: 300px;
-    }
-
-    nav .logo {
-        width: 120px;
-        margin: 12px 0;
-    }
-
-    nav .nav-content {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        width: 90%;
-    }
-    nav .nav-content ul {
-        flex-direction: column;
-    }
-
-    nav .nav-mobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
