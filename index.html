@@ -22,7 +22,9 @@
 <body data-bs-theme="light">
     <nav>
         <section class="nav-content">
-            <img class="logo" src="./src/img/Secondary-Logo-2.png" alt="Unida Christian College Logo">
+            <a href="index.html">
+                <img class="logo" src="./src/img/Secondary-Logo-2.png" alt="Unida Christian College Logo">
+            </a>
             
             <section class="nav-links">
                 <ul>
@@ -43,12 +45,22 @@
             </section>
             
         </section>
+        <section class="nav-mobile">
+            <div class="btn-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </section>
     </nav>
-    <div class="bgCarousel"></div>
+    <div class="bgCarousel">
+        <img src="./src/img/Home-2.jpg" class="content">
+    </div>
     <section class="vhPage">
         <h1>HELLO WORLD!</h1>
     </section>
     <footer>
+        <p>Learning Mangement System</p>
         <section class="socials">
             <a href="#" target="_blank" class="item">
                 <img src="./src/img/icons/62434fa732124a51bf12aae9_facebook small.svg" alt="UCC Facebook">
@@ -65,4 +77,20 @@
         </section>
     </footer>
 </body>
+<script src="src/js/landingPage_Manager.js"></script>
+<script>
+    let btnNavMenu = document.querySelector(".btn-menu");
+    let modalNav = document.querySelector("nav");
+    let isNavOpen = false;
+    btnNavMenu.addEventListener('click', () => {
+        // if (isNavOpen) {
+        //     isNavOpen = false;
+        // } else {
+        //     isNavOpen = true;
+        // }
+
+        // modalNav.style.height = (!isNavOpen) ? "300px" : "70px";
+        modalNav.classList.toggle("nav-expanded");
+    })
+</script>
 </html>
