@@ -33,9 +33,9 @@
     --btn-border-radius: 32px;
     --btn-padding: 10px 30px;
     --btn-font-family: "Montserrat", Arial, Helvetica, sans-serif;
-    --btn-font-weight: 200;
+    --btn-font-weight: bold;
     --btn-transition: 0.25s all ease;
-    --btn-font-size: 1.10rem;
+    --btn-font-size: 1.05rem;
     --btn-transition: background 0.25s ease;
 }
 
