@@ -3,6 +3,14 @@ let btnNavMenu = document.querySelector(".btn-menu");
 let modalNav = document.querySelector("nav");
 let isNavOpen = false;
 btnNavMenu.addEventListener('click', () => {
+    let icon = btnNavMenu.querySelector(".icon");
+    if(!isNavOpen) {
+        isNavOpen = true;
+        icon.textContent = "close";
+    } else {
+        isNavOpen = false;
+        icon.textContent = "menu";
+    }
     modalNav.classList.toggle("nav-expanded");
 })
 
