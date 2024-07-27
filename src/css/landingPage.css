@@ -79,19 +79,36 @@ nav .btnLogin {
     position: relative;
 }
 
-.bgCarousel .content {
-    /* width: 100%; */
+.bgCarousel .imgContent {
+    width: 100%;
     height: 100%;
+    position: relative;
+}
+
+.bgCarousel .imgContent .content {
+    width: 100%; 
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease-in-out;
 }
+.bgCarousel .imgContent .content.active {
+    opacity: 1;
+}
+
 
 .bgCarousel .paginator {
     /* width: 250px; */
     /* height: 70px; */
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     position: absolute;
     bottom: 2%;
     left: 50%;
