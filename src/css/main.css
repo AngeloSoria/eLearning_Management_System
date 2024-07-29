@@ -71,7 +71,7 @@ body {
     background-color: var(--btn-background-color);
     color: var(--btn-text-color);
     padding: var(--btn-padding);
-    /* border-radius: var(--btn-border-radius); */
+    border-radius: var(--btn-border-radius);
     font-size: var(--btn-font-size);
     transition: var(--btn-transition);
 }

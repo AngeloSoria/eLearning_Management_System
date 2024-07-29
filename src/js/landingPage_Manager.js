@@ -41,7 +41,7 @@ imgResources.forEach(imagePath => {
     // Create image
     const thisImage = document.createElement("div");
     thisImage.classList.add("content");
-    thisImage.style.backgroundImage = `url('./src/img/${imagePath}')`;
+    thisImage.style.backgroundImage = `url('../../img/${imagePath}')`;
     thisImage.alt = imagePath;
 
     if (firstLoad === 1) {
@@ -50,7 +50,6 @@ imgResources.forEach(imagePath => {
 
     bgcImgContent.appendChild(thisImage); 
 });
-console.log("Images loaded.");
 
 let currentIndex = 0;
 let inCooldown = false;

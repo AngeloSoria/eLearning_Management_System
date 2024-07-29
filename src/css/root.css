@@ -31,7 +31,7 @@
     --btn-background-color-hover: var(--olive-2);
     --btn-text-color: var(--white);
     --btn-border-radius: 32px;
-    --btn-padding: 10px 30px;
+    --btn-padding: 10px 25px;
     --btn-font-family: "Montserrat", Arial, Helvetica, sans-serif;
     --btn-font-weight: bold;
     --btn-transition: 0.25s all ease;
