@@ -96,7 +96,7 @@ function changeImage(request) {
 
     setTimeout(() => {
         inCooldown = false;
-    }, 2000);
+    }, 1000);
 }
 
 carouselBtnControlLeft.addEventListener('click', () => {
