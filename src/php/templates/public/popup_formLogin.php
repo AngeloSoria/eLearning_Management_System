@@ -1,26 +1,26 @@
 <?php
-    // session_start();
-    $isInvalidCredentials = "";
+session_start();
+$isInvalidCredentials = "";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Collect and sanitize form data
-        $school_id = htmlspecialchars($_POST['school_id']);
-        $password = htmlspecialchars($_POST['password']);
-        
-        include './src/php/plugins/authLogin.php';
-        
-        $result = authenticate($school_id, $password);
-        
-        if ($result === true) {
-            // Credentials are valid, set session variable and redirect to welcome page
-            $_SESSION['school_id'] = $school_id;
-            header("Location: ../pages/welcome.php");
-            exit();
-        } else {
-            // Set error message
-            $isInvalidCredentials = $result;
-        }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect and sanitize form data
+    $school_id = htmlspecialchars($_POST['school_id']);
+    $password = htmlspecialchars($_POST['password']);
+    
+    include_once '../../php/plugins/authLogin.php';
+    
+    $result = authenticate($school_id, $password);
+    
+    if ($result === true) {
+        // Credentials are valid, set session variable and redirect to welcome page
+        $_SESSION['school_id'] = $school_id;
+        header("Location: ../../php/pages/welcome.php");
+        exit();
+    } else {
+        // Set error message
+        $isInvalidCredentials = $result;
     }
+}
 ?>
 
 <section class="popup">
@@ -58,7 +58,7 @@
             <?php
                 if (!empty($isInvalidCredentials) && $isInvalidCredentials) {
                     echo '<p class="form-textResult">Invalid username or password. Please try again.</p>';
-                    echo "<script>alert('Invalid credentials.')</script>";
+                    echo '<script>$(".popup").fadeIn(100);</script>';
                 }
             ?>
 

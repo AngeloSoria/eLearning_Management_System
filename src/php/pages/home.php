@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +77,7 @@
     </section>
 
     <!-- LOGIN FORM (POPUP) -->
-    <?php include "../templates/public/popup_formLogin.php" ?>
+    <?php include_once "../templates/public/popup_formLogin.php" ?>
 
     <!-- FOOTER -->
     <?php include "../templates/public/footer.php" ?>
