@@ -1,6 +1,5 @@
 <footer>
-    <h1>TEST</h1>
-    <p>Learning Mangement System</p>
+    
     <section class="socials">
         <a href="#" target="_blank" class="item">
             <img src="../../img/icons/62434fa732124a51bf12aae9_facebook small.svg" alt="UCC Facebook">

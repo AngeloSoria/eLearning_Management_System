@@ -49,22 +49,6 @@ body {
     outline: 0.75px solid var(--color-deep-blue);
 }
 
-/* .btn-primary {
-    box-sizing: border-box;
-    background-image: linear-gradient(var(--color-deep-blue), var(--color-livid-blue));
-    padding: var(--btn-padding);
-    border-radius: var(--btn-border-radius);
-    font-family: var(--btn-font-family);
-    font-weight: var(--btn-font-weight);
-    font-size: var(--btn-font-size);
-    color: var(--color-white);
-    transition: var(--btn-transition);
-}
-
-.btn-primary:hover {
-    outline: 0.75px solid var(--color-aqua);
-} */
-
 .btn-primary {
     display: block;
     cursor: pointer;
@@ -80,29 +64,133 @@ body {
     background-color: var(--btn-background-color-hover);
 }
 
+.btn-primary2 {
+    display: block;
+    cursor: pointer;
+    background-color: var(--dartmouth-green);
+    color: var(--btn-text-color);
+    padding: var(--btn-padding);
+    border-radius: var(--btn-border-radius);
+    font-size: var(--btn-font-size);
+    transition: var(--btn-transition);
+}
+
+.btn-primary2:hover {
+    background-color: var(--dark-spring-green);
+}
+
+.popup {
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    transition: 0.25s linear;
+
+    display: none;
+}
+
+.popup::before {
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.65);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+    max-width: 400px;
+}
+
 /* Modals */
 
 .modal {
     min-width: 200px;
     min-height: 200px;
-    background-color: var(--color-black200);
-    border-radius: 6px;
+    max-width: 800px;
+    max-height: 90vh;
+
+    background-color: var(--color-primary);
+    border-radius: var(--modal-borderRadius) 4px;
     padding: 20px;
     display: inline-block;
     margin: 5px;
 }
 
+.modal .topTool {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.modal .topTool .left {
+    grid-column: 1;
+}
+.modal .topTool .mid {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+.modal .topTool .right {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal .modal-title {
+    color: var(--color-secondary);
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+}
+
+.modal .topTool button:has(.icon) {
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .modal .title {
-    font-family: "roboto";
-    font-size: 1.15rem;
+    font-size: 1.025rem;
     font-weight: 400;
-    color: var(--color-white);
-    margin-bottom: 15px;
+    color: var(--color-tertiary);
+    margin-bottom: 5px;
 }
 
 .modal .content .description {
-    font-family: "roboto";
     font-weight: 300;
     font-size: 0.95rem;
-    color: var(--color-white);
+    color: var(--color-tertiary);
+}
+
+.modal .modal-inputbox {
+    padding: 12px 5px;
+    border: 1px solid var(--color-black);
+    border-radius: var(--modal-inputBox-borderRadius);
+}
+
+/* form */
+
+form .form-button {
+    background-color: var(--dartmouth-green);
+    padding: 15px 35px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
 }

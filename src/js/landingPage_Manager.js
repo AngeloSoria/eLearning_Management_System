@@ -1,27 +1,25 @@
 
 // NAVIGATION
-let btnNavMenu = document.querySelector(".btn-menu");
-let modalNav = document.querySelector("nav");
 let isNavOpen = false;
-btnNavMenu.addEventListener('click', () => {
-    let icon = btnNavMenu.querySelector(".icon");
-    if(!isNavOpen) {
-        isNavOpen = true;
-        icon.textContent = "close";
+function toggleNav() {
+    // console.log(`Nav state before: ${isNavOpen}`);
+    $("nav").toggleClass("nav-expanded");
+    
+    let icon = $(".btn-menu").find(".icon");
+    if (isNavOpen == true) {
+        icon.text("menu");
     } else {
-        isNavOpen = false;
-        icon.textContent = "menu";
+        icon.text("close");
     }
-    modalNav.classList.toggle("nav-expanded");
-})
-
-
+    isNavOpen = !isNavOpen;
+    // console.log(`Nav state after: ${isNavOpen}`);
+}
+$(".btn-menu").on('click', toggleNav);
 
 
 // CAROUSEL EFFECT
 const bgCarousel = document.querySelector(".bgCarousel");
 const bgcImgContent = bgCarousel.querySelector(".imgContent");
-// const carouselContent = bgCarousel.querySelector(".content");
 const carouselPaginator = bgCarousel.querySelector(".paginator");
 const carouselPaginatorBullets = carouselPaginator.querySelector(".bullets");
 const carouselBtnControlLeft = carouselPaginator.querySelector("#control-left");
@@ -36,79 +34,77 @@ const imgResources = [
 
 // Load images
 let firstLoad = 0;
-imgResources.forEach(imagePath => {
+$.each(imgResources, function(index, imagePath) {
     firstLoad++;
     // Create image
-    const thisImage = document.createElement("div");
-    thisImage.classList.add("content");
-    thisImage.style.backgroundImage = `url('../../img/${imagePath}')`;
-    thisImage.alt = imagePath;
+    const thisImage = $("<div></div>", {
+        class: "content",
+        css: {
+            backgroundImage: `url('../../img/${imagePath}')`
+        },
+        alt: imagePath
+    });
 
     if (firstLoad === 1) {
-        thisImage.classList.add("active");
+        thisImage.addClass("active");
     }
 
-    bgcImgContent.appendChild(thisImage); 
+    $(bgcImgContent).append(thisImage);
 });
 
+
+// CAROUSEL
 let currentIndex = 0;
 let inCooldown = false;
+
 function changeImage(request) {
-    if (inCooldown) { return };
+    if (inCooldown) return;
     inCooldown = true;
     
     if (request === "next") {
-        if (currentIndex === imgResources.length - 1) {
-            currentIndex = 0;
-        } else {
-            currentIndex++;
-        }
+        currentIndex = (currentIndex + 1) % imgResources.length;
     } else if (request === "prev") {
-        if (currentIndex === 0) {
-            currentIndex = imgResources.length - 1;
-        } else {
-            currentIndex--;
-        }
+        currentIndex = (currentIndex - 1 + imgResources.length) % imgResources.length;
     }
-    // console.log(currentIndex);
-    // carouselContent.src = "./src/img/" + imgResources[currentIndex];
-    const contents = bgcImgContent.querySelectorAll(".content")
-    for (let index = 0; index < contents.length; index++) {
-        if (index === currentIndex) {
-            contents[index].classList.add("active");
-        } else {
-            contents[index].classList.remove("active");
-        }
-    }
-    // bgcImgContent.querySelectorAll(".content")[currentIndex]
 
+    // Update images
+    $(".content").removeClass("active").eq(currentIndex).addClass("active");
 
-    const bullets = carouselPaginatorBullets.querySelectorAll(".bullet");
-    for (let index = 0; index < bullets.length; index++) {
-        const thisBullet = bullets[index].querySelector("span");
-        if (index === currentIndex) {
-            thisBullet.textContent = "radio_button_checked";
-        } else {
-            thisBullet.textContent = "radio_button_unchecked";
-        }
-    }
+    // Update bullets
+    $(".bullet span").text("radio_button_unchecked").eq(currentIndex).text("radio_button_checked");
 
     setTimeout(() => {
         inCooldown = false;
     }, 1000);
 }
 
-carouselBtnControlLeft.addEventListener('click', () => {
+$("#control-left").on('click', function() {
     changeImage("prev");
-})
-carouselBtnControlRight.addEventListener('click', () => {
+});
+
+$("#control-right").on('click', function() {
     changeImage("next");
-})
+});
 
 // AUTOMATIC CAROUSEL
-window.onload = () => {
+$(window).on('load', function() {
     setTimeout(() => {}, 3000);
     setInterval(() => {
         changeImage("next");
     }, 7000);
-}
+});
+//================================================
+
+// Login POPUP
+$loginModal = $(".popup");
+$("#btnLogin").on('click', function() {
+    if($loginModal.is(":hidden")) {
+        $loginModal.fadeIn(100);
+        toggleNav();
+    } else {
+        $loginModal.fadeOut(100);
+    }
+});
+$("#btnPopupLoginClose").on('click', function() {
+    $loginModal.fadeOut(100);
+});

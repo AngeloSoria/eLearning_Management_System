@@ -37,6 +37,9 @@
     --btn-transition: 0.25s all ease;
     --btn-font-size: 1.05rem;
     --btn-transition: background 0.25s ease;
+
+    --modal-borderRadius: 6px;
+    --modal-inputBox-borderRadius: 4px;
 }
 
 [data-bs-theme="light"] {

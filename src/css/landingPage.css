@@ -8,7 +8,7 @@ body {
 
 nav {
     /* outline: 2px solid red; */
-    background-color: var(--white);
+    background-color: var(--color-primary);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     width: 100%;
     color: black;
@@ -47,9 +47,11 @@ nav .nav-links {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav .nav-links ul {
+    font-family: "Montserrat";
     list-style-type: none;
 
     display: flex;
@@ -163,12 +165,51 @@ nav .btnLogin {
 }
 /* =================================================== */
 
+.modal:has(.form-login) {
+    width: 350px;
+}
+
+.modal:has(.form-login)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form-login {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-login > div {
+    width: 100%;
+}
+
+.form-login .modal-inputbox {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-login .btnLogin {
+    width: 100%;
+}
+
+.form-login .form-textResult {
+    width: 100%;
+    color: red;
+    font-family: "Montserrat";
+    font-size: 1.05rem;
+}
 
 
 /* =================================================== */
 /* FOOTER */
 footer {
-    background-color: var(--viridian);
+    background-color: var(--dartmouth-green);
     display: flex;
     justify-content: end;
     align-items: center;

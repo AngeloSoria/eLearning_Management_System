@@ -12,6 +12,8 @@
 </head>
 
 <body data-bs-theme="light">
+
+    <!-- NAVBAR -->
     <nav>
         <section class="nav-content">
             <a href="home.php">
@@ -27,7 +29,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            Placeholder
+                            PLACEHOLDER
                         </a>
                     </li>
                     <li class="btn-primary btnLogin" id="btnLogin">
@@ -42,7 +44,7 @@
         </button>
     </nav>
 
-
+    <!-- IMAGE CAROUSEL -->
     <div class="bgCarousel">
         <div class="imgContent"></div>
         <div class="paginator">
@@ -70,13 +72,17 @@
     </div>
 
     <section class="vhPage">
-        <h1>HELLO WORLD!</h1>
+        <h1>HELLO1 WOLRD</h1>
         <?php
         for ($i = 0; $i < 10; $i++) {
             echo "<h2>Test " . $i . "</h2>";
         }
         ?>
     </section>
+
+    <!-- LOGIN FORM (POPUP) -->
+    <?php include "../templates/public/popup_formLogin.php" ?>
+
     <!-- FOOTER -->
     <?php include "../templates/public/footer.php" ?>
 </body>
