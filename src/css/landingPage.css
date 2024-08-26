@@ -53,6 +53,7 @@ nav .nav-links {
 nav .nav-links ul {
     font-family: "Montserrat";
     list-style-type: none;
+    font-size: 0.9rem;
 
     display: flex;
     justify-content: space-around;
